@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.097e7283.chunk.css",
+    "main.css": "/my-app/static/css/main.3a945d2f.chunk.css",
     "main.js": "/my-app/static/js/main.0ff27935.chunk.js",
     "main.js.map": "/my-app/static/js/main.0ff27935.chunk.js.map",
     "runtime-main.js": "/my-app/static/js/runtime-main.4190aad3.js",
@@ -10,7 +10,7 @@
     "static/js/3.40e3f7aa.chunk.js": "/my-app/static/js/3.40e3f7aa.chunk.js",
     "static/js/3.40e3f7aa.chunk.js.map": "/my-app/static/js/3.40e3f7aa.chunk.js.map",
     "index.html": "/my-app/index.html",
-    "static/css/main.097e7283.chunk.css.map": "/my-app/static/css/main.097e7283.chunk.css.map",
+    "static/css/main.3a945d2f.chunk.css.map": "/my-app/static/css/main.3a945d2f.chunk.css.map",
     "static/js/2.17d47df4.chunk.js.LICENSE.txt": "/my-app/static/js/2.17d47df4.chunk.js.LICENSE.txt",
     "static/media/CatMeowing.e403e3f1.png": "/my-app/static/media/CatMeowing.e403e3f1.png",
     "static/media/DogBarking.da416b27.png": "/my-app/static/media/DogBarking.da416b27.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.4190aad3.js",
     "static/js/2.17d47df4.chunk.js",
-    "static/css/main.097e7283.chunk.css",
+    "static/css/main.3a945d2f.chunk.css",
     "static/js/main.0ff27935.chunk.js"
   ]
 }
