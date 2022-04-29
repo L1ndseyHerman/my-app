@@ -33,9 +33,11 @@ const Home: React.FC = () => {
         <a href="https://l1ndseyherman.github.io/" className={classes.link}>
           github.com
         </a>
-        . Also, check out my basic React JS videogame that is a PWA and hosted
-        on AWS Amplify:&nbsp;
-        <a href="https://www.shield-magic-sword.app/" className={classes.link}>
+        . Also, check out my PWA React JS turn-based game:&nbsp;
+        <a
+          href="https://l1ndseyherman.github.io/GithubPages2_Shield_Magic_Sword/"
+          className={classes.link}
+        >
           shield-magic-sword.app
         </a>
         .
