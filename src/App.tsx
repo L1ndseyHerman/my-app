@@ -8,7 +8,8 @@ import Skills from "./pages/Skills";
 import Hobbies from "./pages/Hobbies";
 import Contact from "./pages/Contact";
 import JS_Skills from "./pages/JS_Skills";
-import Fake_Webpages from "./pages/Fake_Webpages";
+//import Fake_Webpages from "./pages/Fake_Webpages";
+import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
 
 const App: React.FC = () => {
   return (
@@ -34,8 +35,8 @@ const App: React.FC = () => {
       <Route path="/js-skills">
         <JS_Skills />
       </Route>
-      <Route path="/fake-webpages">
-        <Fake_Webpages />
+      <Route path="/the-adventures-of-bob">
+        <TheAdventuresOfBob />
       </Route>
     </Switch>
   );

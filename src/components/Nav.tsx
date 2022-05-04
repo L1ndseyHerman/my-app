@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
       <OneNavLink text="Hobbies" theUrl="/hobbies" />
       <OneNavLink text="Contact" theUrl="/contact" />
       <OneNavLink text="JS Skills" theUrl="/js-skills" />
-      <OneNavLink text="Fake Webpages" theUrl="/fake-webpages" />
+      <OneNavLink text="Work In Progress" theUrl="/the-adventures-of-bob" />
     </div>
   );
 };
