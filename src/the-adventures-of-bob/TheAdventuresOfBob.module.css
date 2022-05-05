@@ -1,0 +1,19 @@
+.centerText {
+  text-align: center;
+}
+.centeredLink {
+  display: block;
+  width: 107px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 80%;
+  color: black;
+}
+.gameDiv {
+  background-color: cornflowerblue;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 65vh;
+  margin-bottom: 3%;
+  border: 3px solid black;
+}
