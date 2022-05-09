@@ -10,6 +10,9 @@ const TheAdventuresOfBob: React.FC = () => {
       <div className={classes.gameDiv}>
         <img src={bob} alt="Bob" />
       </div>
+      <Link to="/screen-size-test" className={classes.centeredLink}>
+        Screen Size Test
+      </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site
       </Link>

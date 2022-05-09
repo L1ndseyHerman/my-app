@@ -9,6 +9,7 @@ import Hobbies from "./pages/Hobbies";
 import Contact from "./pages/Contact";
 import JS_Skills from "./pages/JS_Skills";
 import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
+import ScreenSizeTest from "./the-adventures-of-bob/ScreenSizeTest";
 
 const App: React.FC = () => {
   return (
@@ -36,6 +37,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/the-adventures-of-bob">
         <TheAdventuresOfBob />
+      </Route>
+      <Route path="/screen-size-test">
+        <ScreenSizeTest />
       </Route>
     </Switch>
   );
