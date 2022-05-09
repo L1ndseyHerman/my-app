@@ -1,8 +1,14 @@
 .gameDiv {
   background-color: cornflowerblue;
+  /* WANT ASPECT RATIO OF 16 BY 9!!!! */
+  /*width: 1024px;
+  height: 768px;*/
   height: 100vh;
 }
 .gridImage {
-  height: 10vh;
-  width: 5%;
+  /*height: 11.11vh;
+  width: 6.25%;*/
+
+  width: 6.25%;
+  /*height: 6.25%;*/
 }
