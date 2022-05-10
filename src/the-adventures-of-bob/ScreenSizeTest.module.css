@@ -8,7 +8,61 @@
 .gridImage {
   /*height: 11.11vh;
   width: 6.25%;*/
-
+  position: absolute;
   width: 6.25%;
   /*height: 6.25%;*/
+}
+.gridImageRow2 {
+  position: absolute;
+  width: 6.25%;
+  /*margin-top: 11.11vh;*/
+  margin-top: 12.5vh;
+}
+.gridImageColumn2 {
+  position: absolute;
+  width: 6.25%;
+  margin-left: 6.25%;
+}
+.gridImageRow2Column2 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 12.5vh;
+  margin-left: 6.25%;
+}
+
+.gridImageRow3 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 25vh;
+}
+.gridImageRow4 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 37.5vh;
+}
+.gridImageRow5 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 50vh;
+}
+.gridImageRow6 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 62.5vh;
+}
+.gridImageRow7 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 75vh;
+}
+.gridImageRow8 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 87.5vh;
+}
+
+.gridImageRow9 {
+  position: absolute;
+  width: 6.25%;
+  margin-top: 88.88vh;
 }
