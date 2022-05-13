@@ -1,0 +1,5 @@
+.gameDiv {
+  background-color: cornflowerblue;
+  /* Need to subtract this 6px from the stuff! */
+  /*border: 3px solid black;*/
+}

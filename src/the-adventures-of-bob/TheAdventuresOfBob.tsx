@@ -16,6 +16,9 @@ const TheAdventuresOfBob: React.FC = () => {
       <Link to="/screen-size-test2" className={classes.centeredLink}>
         Screen Size Test2
       </Link>
+      <Link to="/screen-size-test3" className={classes.centeredLink}>
+        Screen Size Test3
+      </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site
       </Link>
