@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import bob from "../pages/bobseventy.png";
 import classes from "./ScreenSizeTest3.module.css";
 
@@ -38,13 +38,41 @@ const ScreenSizeTest3: React.FC = () => {
   console.log("Screen width is: " + gameDivWidth);
   console.log("Screen height is: " + gameDivHeight);
 
+  const borderSize = 3;
+
+  //  Top and bottom, left and right:
+  const minusBordersGameDivWidth = gameDivWidth - borderSize * 2;
+  const minusBordersGameDivHeight = gameDivHeight - borderSize * 2;
+
+  const borderText = borderSize + "px solid black";
+
+  const halfOfRemainingWidth =
+    (window.innerWidth - minusBordersGameDivWidth) / 2 - borderSize;
+  const marginLeftText = halfOfRemainingWidth + "px";
+  const halftOfRemainingHeight =
+    (window.innerHeight - minusBordersGameDivHeight) / 2 - borderSize;
+  const marginTopText = halftOfRemainingHeight + "px";
+
+  const bobWidth = minusBordersGameDivWidth / 16;
+  const bobHeight = minusBordersGameDivHeight / 10;
+
   return (
-    <div>
+    <div className={classes.outerDiv}>
       <div
-        style={{ width: gameDivWidth, height: gameDivHeight }}
+        style={{
+          width: minusBordersGameDivWidth,
+          height: minusBordersGameDivHeight,
+          border: borderText,
+          marginLeft: marginLeftText,
+          marginTop: marginTopText,
+        }}
         className={classes.gameDiv}
       >
-        <img src={bob} alt="Bob" />
+        <img
+          src={bob}
+          alt="Bob"
+          style={{ width: bobWidth, height: bobHeight }}
+        />
       </div>
     </div>
   );
