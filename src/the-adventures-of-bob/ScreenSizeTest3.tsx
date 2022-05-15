@@ -6,16 +6,28 @@ const ScreenSizeTest3: React.FC = () => {
   let gameDivWidth = window.innerWidth;
   let gameDivHeight = window.innerHeight;
 
+  const aspectRatioWidth = 16;
+  const aspectRatioHeight = 9;
+
   console.log("Starting screen width is: " + gameDivWidth);
   console.log("Starting screen height is: " + gameDivHeight);
 
-  if (gameDivWidth / gameDivHeight > 16 / 9) {
-    while (gameDivWidth / gameDivHeight > 16 / 9) {
+  if (gameDivWidth / gameDivHeight > aspectRatioWidth / aspectRatioHeight) {
+    while (
+      gameDivWidth / gameDivHeight >
+      aspectRatioWidth / aspectRatioHeight
+    ) {
       gameDivWidth--;
       console.log("gameDivWidth = " + gameDivWidth);
     }
-  } else if (gameDivWidth / gameDivHeight < 16 / 9) {
-    while (gameDivWidth / gameDivHeight < 16 / 9) {
+  } else if (
+    gameDivWidth / gameDivHeight <
+    aspectRatioWidth / aspectRatioHeight
+  ) {
+    while (
+      gameDivWidth / gameDivHeight <
+      aspectRatioWidth / aspectRatioHeight
+    ) {
       gameDivHeight--;
       console.log("gameDivHeight = " + gameDivHeight);
     }
@@ -35,12 +47,19 @@ const ScreenSizeTest3: React.FC = () => {
   const halfOfRemainingWidth =
     (window.innerWidth - minusBordersGameDivWidth) / 2 - borderSize;
   const marginLeftText = halfOfRemainingWidth + "px";
-  const halftOfRemainingHeight =
+  const halfOfRemainingHeight =
     (window.innerHeight - minusBordersGameDivHeight) / 2 - borderSize;
-  const marginTopText = halftOfRemainingHeight + "px";
+  const marginTopText = halfOfRemainingHeight + "px";
 
-  const bobWidth = minusBordersGameDivWidth / 16;
-  const bobHeight = minusBordersGameDivHeight / 9;
+  const bobWidth = minusBordersGameDivWidth / aspectRatioWidth;
+  const bobHeight = minusBordersGameDivHeight / aspectRatioHeight;
+
+  const marginLeftTextMinusBorder = halfOfRemainingWidth + 3 + "px";
+  const marginTopTextMinusBorder = halfOfRemainingHeight + 3 + "px";
+
+  const imageTwoLeft = halfOfRemainingWidth + bobWidth + 3 + "px";
+
+  const imageThreeTop = halfOfRemainingHeight + bobHeight + 3 + "px";
 
   return (
     <div className={classes.outerDiv}>
@@ -57,7 +76,35 @@ const ScreenSizeTest3: React.FC = () => {
         <img
           src={bob}
           alt="Bob"
-          style={{ width: bobWidth, height: bobHeight }}
+          className={classes.bob}
+          style={{
+            width: bobWidth,
+            height: bobHeight,
+            left: marginLeftTextMinusBorder,
+            top: marginTopTextMinusBorder,
+          }}
+        />
+        <img
+          src={bob}
+          alt="Bob"
+          className={classes.bob}
+          style={{
+            width: bobWidth,
+            height: bobHeight,
+            left: imageTwoLeft,
+            top: marginTopTextMinusBorder,
+          }}
+        />
+        <img
+          src={bob}
+          alt="Bob"
+          className={classes.bob}
+          style={{
+            width: bobWidth,
+            height: bobHeight,
+            left: marginLeftTextMinusBorder,
+            top: imageThreeTop,
+          }}
         />
       </div>
     </div>

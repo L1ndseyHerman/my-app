@@ -5,4 +5,8 @@
 }
 .outerDiv {
   background-color: goldenrod;
+  height: 100vh;
+}
+.bob {
+  position: absolute;
 }
