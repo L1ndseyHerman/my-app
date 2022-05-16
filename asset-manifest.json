@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.07f89a95.chunk.css",
-    "main.js": "/my-app/static/js/main.895031e9.chunk.js",
-    "main.js.map": "/my-app/static/js/main.895031e9.chunk.js.map",
+    "main.css": "/my-app/static/css/main.a0f5c155.chunk.css",
+    "main.js": "/my-app/static/js/main.3e525100.chunk.js",
+    "main.js.map": "/my-app/static/js/main.3e525100.chunk.js.map",
     "runtime-main.js": "/my-app/static/js/runtime-main.ba84e0ea.js",
     "runtime-main.js.map": "/my-app/static/js/runtime-main.ba84e0ea.js.map",
     "static/js/2.f9eeb7c1.chunk.js": "/my-app/static/js/2.f9eeb7c1.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.ec41b92f.chunk.js": "/my-app/static/js/3.ec41b92f.chunk.js",
     "static/js/3.ec41b92f.chunk.js.map": "/my-app/static/js/3.ec41b92f.chunk.js.map",
     "index.html": "/my-app/index.html",
-    "static/css/main.07f89a95.chunk.css.map": "/my-app/static/css/main.07f89a95.chunk.css.map",
+    "static/css/main.a0f5c155.chunk.css.map": "/my-app/static/css/main.a0f5c155.chunk.css.map",
     "static/js/2.f9eeb7c1.chunk.js.LICENSE.txt": "/my-app/static/js/2.f9eeb7c1.chunk.js.LICENSE.txt",
     "static/media/CatMeowing.e403e3f1.png": "/my-app/static/media/CatMeowing.e403e3f1.png",
     "static/media/DogBarking.da416b27.png": "/my-app/static/media/DogBarking.da416b27.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.ba84e0ea.js",
     "static/js/2.f9eeb7c1.chunk.js",
-    "static/css/main.07f89a95.chunk.css",
-    "static/js/main.895031e9.chunk.js"
+    "static/css/main.a0f5c155.chunk.css",
+    "static/js/main.3e525100.chunk.js"
   ]
 }
