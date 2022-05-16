@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./TheAdventuresOfBob.module.css";
-import bob from "../pages/bobseventy.png";
 
 const TheAdventuresOfBob: React.FC = () => {
   return (
-    <div>
-      <h2 className={classes.centerText}>The Adventures of Bob</h2>
-      <div className={classes.gameDiv}>
-        <img src={bob} alt="Bob" />
-      </div>
+    <div className={classes.outerDiv}>
+      <h1 className={classes.centerText}>The Adventures of Bob</h1>
       <Link to="/screen-size-test" className={classes.centeredLink}>
         Screen Size Test
       </Link>

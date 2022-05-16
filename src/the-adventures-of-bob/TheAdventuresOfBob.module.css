@@ -3,17 +3,19 @@
 }
 .centeredLink {
   display: block;
-  width: 115px;
+  width: 150px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 80%;
   color: black;
-}
-.gameDiv {
-  background-color: cornflowerblue;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-top: 65vh;
-  margin-bottom: 1%;
+
+  padding: 10px;
   border: 3px solid black;
+  margin-bottom: 30px;
+  text-decoration: none;
+  background-color: palegoldenrod;
+}
+.outerDiv {
+  background-color: cornflowerblue;
+  height: 99vh;
+  padding-top: 1vh;
 }
