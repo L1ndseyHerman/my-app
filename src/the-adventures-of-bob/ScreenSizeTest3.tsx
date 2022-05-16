@@ -55,11 +55,23 @@ const ScreenSizeTest3: React.FC = () => {
   const bobHeight = minusBordersGameDivHeight / aspectRatioHeight;
 
   const marginLeftTextMinusBorder = halfOfRemainingWidth + 3 + "px";
-  const marginTopTextMinusBorder = halfOfRemainingHeight + 3 + "px";
+  //const marginTopTextMinusBorder = halfOfRemainingHeight + 3 + "px";
+
+  const imageOneTop = halfOfRemainingHeight + bobHeight + 3 * 2 + "px";
 
   const imageTwoLeft = halfOfRemainingWidth + bobWidth + 3 + "px";
 
-  const imageThreeTop = halfOfRemainingHeight + bobHeight + 3 + "px";
+  const imageThreeTop = halfOfRemainingHeight + bobHeight * 2 + 3 * 2 + "px";
+
+  //const negativeOneFourthBob = (-1 * bobHeight) / 16 + "px";
+  const halfBobHeight = bobHeight / 2 + "px";
+  const fourthBobHeight = bobHeight / 4 + "px";
+  const thirdBobHeight = bobHeight / 3 + "px";
+  const twoThirdsBobHeight = (2 * bobHeight) / 3 + "px";
+  const sixthBobHeight = bobHeight / 6 + "px";
+  const sixthBobHeightMinusBorder = bobHeight / 6 - 3 + "px";
+  const sixthBobHeightMinusHalfBorder = bobHeight / 6 - 3 / 2 + "px";
+  const twelfthBobHeight = bobHeight / 12 + "px";
 
   return (
     <div className={classes.outerDiv}>
@@ -73,6 +85,20 @@ const ScreenSizeTest3: React.FC = () => {
         }}
         className={classes.gameDiv}
       >
+        <div
+          style={{
+            paddingTop: sixthBobHeight,
+            paddingBottom: sixthBobHeightMinusHalfBorder,
+          }}
+          className={classes.scoreDiv}
+        >
+          <h2
+            style={{ fontSize: fourthBobHeight }}
+            className={classes.scoreText}
+          >
+            Score: Placeholder
+          </h2>
+        </div>
         <img
           src={bob}
           alt="Bob"
@@ -81,7 +107,7 @@ const ScreenSizeTest3: React.FC = () => {
             width: bobWidth,
             height: bobHeight,
             left: marginLeftTextMinusBorder,
-            top: marginTopTextMinusBorder,
+            top: imageOneTop,
           }}
         />
         <img
@@ -92,7 +118,7 @@ const ScreenSizeTest3: React.FC = () => {
             width: bobWidth,
             height: bobHeight,
             left: imageTwoLeft,
-            top: marginTopTextMinusBorder,
+            top: imageOneTop,
           }}
         />
         <img
