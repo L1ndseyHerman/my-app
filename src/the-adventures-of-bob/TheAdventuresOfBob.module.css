@@ -4,6 +4,7 @@
 .centeredLink {
   display: block;
   width: 150px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   color: black;
