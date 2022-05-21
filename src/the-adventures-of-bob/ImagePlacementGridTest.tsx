@@ -1,7 +1,7 @@
 import React from "react";
-import bob from "../pages/bobseventy.png";
 import classes from "./ImagePlacementGridTest.module.css";
 import ImagePlacementGrid from "./ImagePlacementGrid";
+import { randomInt } from "crypto";
 
 const ImagePlacementGridTest: React.FC = () => {
   let gameDivWidth = window.innerWidth;
@@ -56,7 +56,6 @@ const ImagePlacementGridTest: React.FC = () => {
   const bobHeight = minusBordersGameDivHeight / aspectRatioHeight;
 
   const marginLeftTextMinusBorder = halfOfRemainingWidth + 3 + "px";
-  //const marginTopTextMinusBorder = halfOfRemainingHeight + 3 + "px";
 
   const imageOneTop = halfOfRemainingHeight + bobHeight + 3 * 2 + "px";
 
@@ -67,6 +66,51 @@ const ImagePlacementGridTest: React.FC = () => {
   const fourthBobHeight = bobHeight / 4 + "px";
   const sixthBobHeight = bobHeight / 6 + "px";
   const sixthBobHeightMinusHalfBorder = bobHeight / 6 - 3 / 2 + "px";
+
+  const gridImages = [];
+  /*loadedMeals.push({
+    id: key,
+    //  This is 2 properties deep, like looking for 'm1', then 'Sushi'.
+    name: responseData[key].name,
+    description: responseData[key].description,
+    price: responseData[key].price
+  });*/
+  let key = 0;
+
+  for (let index = 0; index < aspectRatioHeight - 1; index++) {
+    for (let index2 = 0; index2 < aspectRatioWidth; index2++) {
+      gridImages.push({
+        key: key,
+        width: bobWidth,
+        height: bobHeight,
+        left: halfOfRemainingWidth + 3 + index2 * bobWidth + "px",
+        top:
+          halfOfRemainingHeight + bobHeight + bobHeight * index + 3 * 2 + "px",
+      });
+
+      key++;
+    }
+  }
+
+  const gridImageList = gridImages.map((gridImage) => (
+    <ImagePlacementGrid
+      key={gridImage.key}
+      width={gridImage.width}
+      height={gridImage.height}
+      left={gridImage.left}
+      top={gridImage.top}
+    />
+  ));
+
+  /*const mealsList = meals.map((meal) => (
+    <MealItem
+      key={meal.id}
+      id={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));*/
 
   return (
     <div className={classes.outerDiv}>
@@ -94,24 +138,7 @@ const ImagePlacementGridTest: React.FC = () => {
             Score: Placeholder
           </h2>
         </div>
-        <ImagePlacementGrid
-          width={bobWidth}
-          height={bobHeight}
-          left={marginLeftTextMinusBorder}
-          top={imageOneTop}
-        />
-        <ImagePlacementGrid
-          width={bobWidth}
-          height={bobHeight}
-          left={imageTwoLeft}
-          top={imageOneTop}
-        />
-        <ImagePlacementGrid
-          width={bobWidth}
-          height={bobHeight}
-          left={marginLeftTextMinusBorder}
-          top={imageThreeTop}
-        />
+        {gridImageList}
       </div>
     </div>
   );
