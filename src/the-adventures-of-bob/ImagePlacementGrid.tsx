@@ -1,8 +1,8 @@
 import React from "react";
-import bob from "../pages/bobseventy.png";
 import classes from "./ImagePlacementGrid.module.css";
 
 const ImagePlacementGrid: React.FC<{
+  image: string;
   width: number;
   height: number;
   left: string;
@@ -10,7 +10,7 @@ const ImagePlacementGrid: React.FC<{
 }> = (props) => {
   return (
     <img
-      src={bob}
+      src={props.image}
       alt="Bob"
       className={classes.bob}
       style={{

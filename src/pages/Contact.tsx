@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "../components/Wrapper";
 import classes from "./Contact.module.css";
-import bobImage from "./bobseventy.png";
+import bobImage from "./bobseventy2.png";
 
 const Contact: React.FC = () => {
   return (

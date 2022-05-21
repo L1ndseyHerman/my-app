@@ -1,5 +1,5 @@
 import React from "react";
-import bob from "../pages/bobseventy.png";
+import bob from "./bobseventy.png";
 import classes from "./ScreenSizeTest2.module.css";
 
 const ScreenSizeTest2: React.FC = () => {
