@@ -18,6 +18,9 @@ const TheAdventuresOfBob: React.FC = () => {
       <Link to="/image-placement-grid-test" className={classes.centeredLink}>
         Image Placement Grid Test
       </Link>
+      <Link to="/movement-test" className={classes.centeredLink}>
+        Movement Test
+      </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site
       </Link>

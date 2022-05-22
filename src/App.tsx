@@ -14,6 +14,7 @@ import ScreenSizeTest from "./the-adventures-of-bob/ScreenSizeTest";
 import ScreenSizeTest2 from "./the-adventures-of-bob/ScreenSizeTest2";
 import ScreenSizeTest3 from "./the-adventures-of-bob/ScreenSizeTest3";
 import ImagePlacementGridTest from "./the-adventures-of-bob/ImagePlacementGridTest";
+import MovementTest from "./the-adventures-of-bob/MovementTest";
 
 const App: React.FC = () => {
   return (
@@ -53,6 +54,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/image-placement-grid-test">
         <ImagePlacementGridTest />
+      </Route>
+      <Route path="/movement-test">
+        <MovementTest />
       </Route>
     </Switch>
   );

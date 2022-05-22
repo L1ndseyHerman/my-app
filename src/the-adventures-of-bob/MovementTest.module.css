@@ -1,0 +1,16 @@
+.gameDiv {
+  background-color: cornflowerblue;
+}
+.outerDiv {
+  background-color: chocolate;
+}
+.bob {
+  position: absolute;
+}
+.scoreDiv {
+  background-color: goldenrod;
+  border-bottom: 3px solid black;
+}
+.scoreText {
+  text-align: center;
+}
