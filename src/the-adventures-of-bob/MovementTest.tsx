@@ -4,8 +4,6 @@ import ImagePlacementGrid from "./ImagePlacementGrid";
 import bob from "./bobseventy.png";
 
 const MovementTest: React.FC = () => {
-  const [bobsMarginLeft, setBobsMarginLeft] = useState(-1);
-
   let gameDivWidth = window.innerWidth;
   let gameDivHeight = window.innerHeight;
 
@@ -54,11 +52,45 @@ const MovementTest: React.FC = () => {
   const sixthBobHeight = bobHeight / 6 + "px";
   const sixthBobHeightMinusHalfBorder = bobHeight / 6 - 3 / 2 + "px";
 
-  useEffect(() => {
+  //setTimeout(function, milliseconds)
+
+  /*useEffect(() => {
     setBobsMarginLeft(
       halfOfRemainingHeight + bobHeight + bobHeight * 7 + 3 * 2
     );
+  }, []);*/
+
+  const [seconds, setSeconds] = useState(0);
+  /*const [bobsMarginLeft, setBobsMarginLeft] = useState(
+    halfOfRemainingWidth + 3 * 5
+  );*/
+  /*const [both, setBoth] = useState({
+    seconds: -1,
+    bobsMarginLeft: halfOfRemainingWidth + 3 * 5,
+  });*/
+  //let bobsMarginLeft = -1;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      /*setBoth({
+        seconds: both.seconds + 1,
+        bobsMarginLeft: both.bobsMarginLeft + both.seconds * 5,
+      });*/
+      setSeconds((seconds) => seconds + 1);
+      /*setBobsMarginLeft(
+        halfOfRemainingHeight +
+          bobHeight +
+          bobHeight +
+          (1 / 5) * bobHeight * seconds * 7 +
+          3 * 2
+      );*/
+      // = halfOfRemainingWidth + 3 + seconds * 5;
+      //setBobsMarginLeft((bobsMarginLeft) => bobsMarginLeft + seconds * 5);
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
+
+  console.log(seconds);
 
   return (
     <div className={classes.outerDiv}>
@@ -91,8 +123,8 @@ const MovementTest: React.FC = () => {
           image={bob}
           width={bobWidth}
           height={bobHeight}
-          left={halfOfRemainingWidth + 3 + "px"}
-          top={bobsMarginLeft + "px"}
+          left={halfOfRemainingWidth + 3 + seconds * 20 + "px"}
+          top={halfOfRemainingHeight + bobHeight + bobHeight * 7 + 3 * 2 + "px"}
         />
       </div>
     </div>
