@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.5b06734f.chunk.css",
-    "main.js": "/my-app/static/js/main.26b05f45.chunk.js",
-    "main.js.map": "/my-app/static/js/main.26b05f45.chunk.js.map",
-    "runtime-main.js": "/my-app/static/js/runtime-main.8ea3ec96.js",
-    "runtime-main.js.map": "/my-app/static/js/runtime-main.8ea3ec96.js.map",
-    "static/js/2.c483f6d2.chunk.js": "/my-app/static/js/2.c483f6d2.chunk.js",
-    "static/js/2.c483f6d2.chunk.js.map": "/my-app/static/js/2.c483f6d2.chunk.js.map",
-    "static/js/3.62dd2060.chunk.js": "/my-app/static/js/3.62dd2060.chunk.js",
-    "static/js/3.62dd2060.chunk.js.map": "/my-app/static/js/3.62dd2060.chunk.js.map",
+    "main.css": "/my-app/static/css/main.5d3ca78a.chunk.css",
+    "main.js": "/my-app/static/js/main.f66847bf.chunk.js",
+    "main.js.map": "/my-app/static/js/main.f66847bf.chunk.js.map",
+    "runtime-main.js": "/my-app/static/js/runtime-main.6fb8ac56.js",
+    "runtime-main.js.map": "/my-app/static/js/runtime-main.6fb8ac56.js.map",
+    "static/js/2.adf52b6e.chunk.js": "/my-app/static/js/2.adf52b6e.chunk.js",
+    "static/js/2.adf52b6e.chunk.js.map": "/my-app/static/js/2.adf52b6e.chunk.js.map",
+    "static/js/3.8f2a05b0.chunk.js": "/my-app/static/js/3.8f2a05b0.chunk.js",
+    "static/js/3.8f2a05b0.chunk.js.map": "/my-app/static/js/3.8f2a05b0.chunk.js.map",
     "index.html": "/my-app/index.html",
-    "static/css/main.5b06734f.chunk.css.map": "/my-app/static/css/main.5b06734f.chunk.css.map",
-    "static/js/2.c483f6d2.chunk.js.LICENSE.txt": "/my-app/static/js/2.c483f6d2.chunk.js.LICENSE.txt",
+    "static/css/main.5d3ca78a.chunk.css.map": "/my-app/static/css/main.5d3ca78a.chunk.css.map",
+    "static/js/2.adf52b6e.chunk.js.LICENSE.txt": "/my-app/static/js/2.adf52b6e.chunk.js.LICENSE.txt",
     "static/media/CatMeowing.e403e3f1.png": "/my-app/static/media/CatMeowing.e403e3f1.png",
     "static/media/DogBarking.da416b27.png": "/my-app/static/media/DogBarking.da416b27.png",
     "static/media/DogChewingBone.e2bda61e.png": "/my-app/static/media/DogChewingBone.e2bda61e.png",
@@ -19,9 +19,9 @@
     "static/media/NopeGrumpyCat.98d85e3a.png": "/my-app/static/media/NopeGrumpyCat.98d85e3a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ea3ec96.js",
-    "static/js/2.c483f6d2.chunk.js",
-    "static/css/main.5b06734f.chunk.css",
-    "static/js/main.26b05f45.chunk.js"
+    "static/js/runtime-main.6fb8ac56.js",
+    "static/js/2.adf52b6e.chunk.js",
+    "static/css/main.5d3ca78a.chunk.css",
+    "static/js/main.f66847bf.chunk.js"
   ]
 }
