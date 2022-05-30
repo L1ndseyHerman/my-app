@@ -61,7 +61,14 @@ const MovementTest2: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(seconds);
+  //console.log(seconds);
+
+  let left = halfOfRemainingWidth + 3 + seconds * 2.5;
+
+  if (left > minusBordersGameDivWidth + 3 * 2) {
+    left = left * -1;
+    console.log("Flipping!");
+  }
 
   return (
     <div className={classes.outerDiv}>
@@ -94,7 +101,7 @@ const MovementTest2: React.FC = () => {
           image={bob}
           width={bobWidth}
           height={bobHeight}
-          left={halfOfRemainingWidth + 3 + seconds * 2.5 + "px"}
+          left={left + "px"}
           top={halfOfRemainingHeight + bobHeight + bobHeight * 7 + 3 * 2 + "px"}
         />
       </div>
