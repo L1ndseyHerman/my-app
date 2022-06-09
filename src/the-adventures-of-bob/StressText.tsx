@@ -75,7 +75,7 @@ const StressTest: React.FC = () => {
         image: image,
         width: bobWidth,
         height: bobHeight,
-        left: halfOfRemainingWidth + 3 + index2 * bobWidth + "px",
+        left: halfOfRemainingWidth + 3 + index2 * bobWidth,
         top:
           halfOfRemainingHeight + bobHeight + bobHeight * index + 3 * 2 + "px",
       });
@@ -90,7 +90,7 @@ const StressTest: React.FC = () => {
       image={gridImage.image}
       width={gridImage.width}
       height={gridImage.height}
-      left={gridImage.left}
+      left={gridImage.left + seconds * 2.5 + "px"}
       top={gridImage.top}
     />
   ));
@@ -122,14 +122,6 @@ const StressTest: React.FC = () => {
           </h2>
         </div>
         {gridImageList}
-        <ImagePlacementGrid
-          key={0}
-          image={bob}
-          width={bobWidth}
-          height={bobHeight}
-          left={halfOfRemainingWidth + 3 + seconds * 2.5 + "px"}
-          top={halfOfRemainingHeight + bobHeight + bobHeight * 7 + 3 * 2 + "px"}
-        />
       </div>
     </div>
   );
