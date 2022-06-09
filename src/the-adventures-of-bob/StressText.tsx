@@ -63,6 +63,38 @@ const StressTest: React.FC = () => {
 
   //console.log(seconds);
 
+  const gridImages = [];
+  let key = 0;
+
+  for (let index = 0; index < aspectRatioHeight - 1; index++) {
+    for (let index2 = 0; index2 < aspectRatioWidth; index2++) {
+      const image = bob;
+
+      gridImages.push({
+        key: key,
+        image: image,
+        width: bobWidth,
+        height: bobHeight,
+        left: halfOfRemainingWidth + 3 + index2 * bobWidth + "px",
+        top:
+          halfOfRemainingHeight + bobHeight + bobHeight * index + 3 * 2 + "px",
+      });
+
+      key++;
+    }
+  }
+
+  const gridImageList = gridImages.map((gridImage) => (
+    <ImagePlacementGrid
+      key={gridImage.key}
+      image={gridImage.image}
+      width={gridImage.width}
+      height={gridImage.height}
+      left={gridImage.left}
+      top={gridImage.top}
+    />
+  ));
+
   return (
     <div className={classes.outerDiv}>
       <div
@@ -89,6 +121,7 @@ const StressTest: React.FC = () => {
             Score: Placeholder
           </h2>
         </div>
+        {gridImageList}
         <ImagePlacementGrid
           key={0}
           image={bob}
