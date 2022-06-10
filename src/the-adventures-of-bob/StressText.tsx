@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classes from "./StressTest.module.css";
 import ImagePlacementGrid from "./ImagePlacementGrid";
 import bob from "./bobseventy.png";
+import blankgridsquare from "./blankgridsquareseventy.png";
 
 const StressTest: React.FC = () => {
   let gameDivWidth = window.innerWidth;
@@ -68,7 +69,7 @@ const StressTest: React.FC = () => {
 
   for (let index = 0; index < aspectRatioHeight - 1; index++) {
     for (let index2 = 0; index2 < aspectRatioWidth; index2++) {
-      const image = bob;
+      const image = blankgridsquare;
 
       gridImages.push({
         key: key,
