@@ -82,18 +82,33 @@ const ImageMovementGridTest: React.FC = () => {
   const gridImages2 = [];
   let key2 = 0;
 
-  for (let index = 0; index < aspectRatioHeight * 5 - 1 * 5; index++) {
-    for (let index2 = 0; index2 < aspectRatioWidth * 5; index2++) {
+  const baseGridSquaresPerImage = 10;
+
+  for (
+    let index = 0;
+    index <
+    aspectRatioHeight * baseGridSquaresPerImage - 1 * baseGridSquaresPerImage;
+    index++
+  ) {
+    for (
+      let index2 = 0;
+      index2 < aspectRatioWidth * baseGridSquaresPerImage;
+      index2++
+    ) {
       gridImages2.push({
         key: key2,
         image: blankgridsquareseventy,
-        width: bobWidth / 5,
-        height: bobHeight / 5,
-        left: halfOfRemainingWidth + 3 + (index2 * bobWidth) / 5 + "px",
+        width: bobWidth / baseGridSquaresPerImage,
+        height: bobHeight / baseGridSquaresPerImage,
+        left:
+          halfOfRemainingWidth +
+          3 +
+          (index2 * bobWidth) / baseGridSquaresPerImage +
+          "px",
         top:
           halfOfRemainingHeight +
           bobHeight +
-          (bobHeight / 5) * index +
+          (bobHeight / baseGridSquaresPerImage) * index +
           3 * 2 +
           "px",
       });
@@ -121,6 +136,17 @@ const ImageMovementGridTest: React.FC = () => {
       height={gridImage2.height}
       left={gridImage2.left}
       top={gridImage2.top}
+    />
+  ));
+
+  const gridImageList3 = gridImages.map((gridImage) => (
+    <ImagePlacementGrid
+      key={gridImage.key}
+      image={blankgridsquareseventy}
+      width={gridImage.width}
+      height={gridImage.height}
+      left={gridImage.left}
+      top={gridImage.top}
     />
   ));
 
@@ -152,6 +178,7 @@ const ImageMovementGridTest: React.FC = () => {
         </div>
         {gridImageList}
         {gridImageList2}
+        {gridImageList3}
       </div>
     </div>
   );
