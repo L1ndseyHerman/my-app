@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./ImageMovementGridTest.module.css";
 import ImagePlacementGrid from "./ImagePlacementGrid";
+import ImageMovementGrid from "./ImageMovementGrid";
 import bob from "./bobseventy.png";
 import blankgridsquareseventy from "./blankgridsquareseventy.png";
 
@@ -129,7 +130,7 @@ const ImageMovementGridTest: React.FC = () => {
   ));
 
   const gridImageList2 = gridImages2.map((gridImage2) => (
-    <ImagePlacementGrid
+    <ImageMovementGrid
       key={gridImage2.key}
       image={gridImage2.image}
       width={gridImage2.width}
