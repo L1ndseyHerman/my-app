@@ -16,7 +16,8 @@ import ScreenSizeTest3 from "./the-adventures-of-bob/ScreenSizeTest3";
 import ImagePlacementGridTest from "./the-adventures-of-bob/ImagePlacementGridTest";
 import MovementTest from "./the-adventures-of-bob/MovementTest";
 import MovementTest2 from "./the-adventures-of-bob/MovementTest2";
-import StressTest from "./the-adventures-of-bob/StressText";
+import StressTest from "./the-adventures-of-bob/StressTest";
+import ImageMovementGridTest from "./the-adventures-of-bob/ImageMovementGridTest";
 
 const App: React.FC = () => {
   return (
@@ -65,6 +66,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/stress-test">
         <StressTest />
+      </Route>
+      <Route path="/image-movement-grid-test">
+        <ImageMovementGridTest />
       </Route>
     </Switch>
   );
