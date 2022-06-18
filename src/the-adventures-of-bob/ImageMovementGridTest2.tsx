@@ -61,11 +61,17 @@ const ImageMovementGridTest2: React.FC = () => {
   const sixthBobHeight = bobHeight / 6 + "px";
   const sixthBobHeightMinusHalfBorder = bobHeight / 6 - 3 / 2 + "px";
 
-  const [seconds, setSeconds] = useState(0);
+  //  ImageMovementGrid:
+  const baseGridSquaresPerImage = 10;
+
+  const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
+    useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds((seconds) => seconds + 1);
+      setImageMovementGridSquaresMoved(
+        (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved + 1
+      );
     }, 25);
     return () => clearInterval(interval);
   }, []);
@@ -91,8 +97,6 @@ const ImageMovementGridTest2: React.FC = () => {
 
   const gridImages2 = [];
   let key2 = 0;
-
-  const baseGridSquaresPerImage = 10;
 
   for (
     let index = 0;
@@ -133,7 +137,11 @@ const ImageMovementGridTest2: React.FC = () => {
       image={gridImage.image}
       width={gridImage.width}
       height={gridImage.height}
-      left={gridImage.left + seconds * 2.5 + "px"}
+      left={
+        gridImage.left +
+        (imageMovementGridSquaresMoved * bobWidth) / baseGridSquaresPerImage +
+        "px"
+      }
       top={gridImage.top}
     />
   ));
