@@ -19,6 +19,7 @@ import MovementTest2 from "./the-adventures-of-bob/MovementTest2";
 import StressTest from "./the-adventures-of-bob/StressTest";
 import ImageMovementGridTest from "./the-adventures-of-bob/ImageMovementGridTest";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
+import ImageMovementGridTest3 from "./the-adventures-of-bob/ImageMovementGridTest3";
 
 const App: React.FC = () => {
   return (
@@ -73,6 +74,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/image-movement-grid-test2">
         <ImageMovementGridTest2 />
+      </Route>
+      <Route path="/image-movement-grid-test3">
+        <ImageMovementGridTest3 />
       </Route>
     </Switch>
   );

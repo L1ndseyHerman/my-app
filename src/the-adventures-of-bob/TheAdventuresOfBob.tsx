@@ -33,6 +33,9 @@ const TheAdventuresOfBob: React.FC = () => {
       <Link to="/image-movement-grid-test2" className={classes.centeredLink}>
         Image Movement Grid Test2
       </Link>
+      <Link to="/image-movement-grid-test3" className={classes.centeredLink}>
+        Image Movement Grid Test3
+      </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site
       </Link>
