@@ -8,8 +8,6 @@ const ImageMovementGrid: React.FC<{
   left: string;
   top: string;
 }> = (props) => {
-  console.log("Oh no!");
-
   return (
     <img
       src={props.image}

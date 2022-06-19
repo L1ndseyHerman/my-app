@@ -13,9 +13,6 @@ const ImageMovementGridTest3: React.FC = () => {
   const aspectRatioWidth = 16;
   const aspectRatioHeight = 9;
 
-  console.log("Starting screen width is: " + gameDivWidth);
-  console.log("Starting screen height is: " + gameDivHeight);
-
   if (gameDivWidth / gameDivHeight > aspectRatioWidth / aspectRatioHeight) {
     while (
       gameDivWidth / gameDivHeight >
@@ -37,8 +34,6 @@ const ImageMovementGridTest3: React.FC = () => {
     }
   }
   //   } else it's perfect already :)
-  console.log("Screen width is: " + gameDivWidth);
-  console.log("Screen height is: " + gameDivHeight);
 
   const borderSize = 3;
 
@@ -177,8 +172,6 @@ const ImageMovementGridTest3: React.FC = () => {
           halfOfRemainingHeight={halfOfRemainingHeight}
           baseGridSquaresPerImage={baseGridSquaresPerImage}
         />
-        {gridImageList2}
-        {gridImageList3}
       </div>
     </div>
   );

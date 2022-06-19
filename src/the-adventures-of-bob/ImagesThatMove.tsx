@@ -19,7 +19,7 @@ const ImagesThatMove: React.FC<{
       setImageMovementGridSquaresMoved(
         (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved + 1
       );
-    }, 25);
+    }, 35);
     return () => clearInterval(interval);
   }, []);
 
