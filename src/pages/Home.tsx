@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         </a>
         .
       </p>
-      <p className={classes.updatedPar}>Last updated: 06/22/22</p>
+      <p className={classes.updatedPar}>Last updated: 06/25/22</p>
     </Wrapper>
   );
 };

@@ -17,6 +17,7 @@ import StressTest from "./the-adventures-of-bob/StressTest";
 import ImageMovementGridTest from "./the-adventures-of-bob/ImageMovementGridTest";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
 import ImageMovementGridTest3 from "./the-adventures-of-bob/ImageMovementGridTest3";
+import ArrowKeyInputTest from "./the-adventures-of-bob/ArrowKeyInputTest";
 
 const App: React.FC = () => {
   return (
@@ -65,6 +66,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/image-movement-grid-test3">
         <ImageMovementGridTest3 />
+      </Route>
+      <Route path="/arrow-key-input-test">
+        <ArrowKeyInputTest />
       </Route>
     </Switch>
   );
