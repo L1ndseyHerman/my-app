@@ -10,8 +10,6 @@ import Contact from "./pages/Contact";
 import JS_Skills from "./pages/JS_Skills";
 
 import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
-import MovementTest2 from "./the-adventures-of-bob/MovementTest2";
-import StressTest from "./the-adventures-of-bob/StressTest";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
 import ArrowKeyInputTest from "./the-adventures-of-bob/ArrowKeyInputTest";
 
@@ -41,12 +39,6 @@ const App: React.FC = () => {
       </Route>
       <Route path="/the-adventures-of-bob">
         <TheAdventuresOfBob />
-      </Route>
-      <Route path="/movement-test2">
-        <MovementTest2 />
-      </Route>
-      <Route path="/stress-test">
-        <StressTest />
       </Route>
       <Route path="/image-movement-grid-test2">
         <ImageMovementGridTest2 />

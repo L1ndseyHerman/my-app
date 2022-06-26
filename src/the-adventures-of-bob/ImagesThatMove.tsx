@@ -22,20 +22,12 @@ const ImagesThatMove: React.FC<{
     document.addEventListener("keydown", function (e) {
       switch (e.key) {
         case "ArrowLeft":
-          //alert("left");
           leftKey = true;
           console.log("Left Down!");
           break;
-        case "ArrowUp":
-          //alert("up");
-          break;
         case "ArrowRight":
-          //alert("right");
           rightKey = true;
           console.log("Right Down!");
-          break;
-        case "ArrowDown":
-          //alert("down");
           break;
       }
     });
@@ -43,25 +35,17 @@ const ImagesThatMove: React.FC<{
     document.addEventListener("keyup", function (e) {
       switch (e.key) {
         case "ArrowLeft":
-          //alert("done left");
           leftKey = false;
           console.log("Left Up");
           break;
-        case "ArrowUp":
-          //alert("done up");
-          break;
         case "ArrowRight":
-          //alert("done right");
           rightKey = false;
           console.log("Right Up");
-          break;
-        case "ArrowDown":
-          //alert("done down");
           break;
       }
     });
 
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", function () {
       console.log("A click!");
       click = true;
     });
@@ -78,11 +62,11 @@ const ImagesThatMove: React.FC<{
         );
       }
       if (click) {
-        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => 0);
+        setImageMovementGridSquaresMoved(0);
         click = false;
         console.log("Done clicking!");
       }
-    }, 35);
+    }, 25);
     return () => clearInterval(interval);
   }, []);
 
@@ -91,7 +75,7 @@ const ImagesThatMove: React.FC<{
 
   for (let index = 0; index < 1; index++) {
     for (let index2 = 0; index2 < 1; index2++) {
-      gridImages.push({
+      /*gridImages.push({
         key: key,
         image: bob,
         width: props.bobWidth,
@@ -101,6 +85,19 @@ const ImagesThatMove: React.FC<{
           props.halfOfRemainingHeight +
           props.bobHeight +
           props.bobHeight * index +
+          3 * 2 +
+          "px",
+      });*/
+      gridImages.push({
+        key: key,
+        image: bob,
+        width: props.bobWidth,
+        height: props.bobHeight,
+        left: props.halfOfRemainingWidth + 3 + index2 * props.bobWidth,
+        top:
+          props.halfOfRemainingHeight +
+          props.bobHeight +
+          props.bobHeight * 7 +
           3 * 2 +
           "px",
       });

@@ -6,12 +6,6 @@ const TheAdventuresOfBob: React.FC = () => {
   return (
     <div className={classes.outerDiv}>
       <h1 className={classes.centerText}>The Adventures of Bob</h1>
-      <Link to="/movement-test2" className={classes.centeredLink}>
-        Movement Test2
-      </Link>
-      <Link to="/stress-test" className={classes.centeredLink}>
-        Stress Test
-      </Link>
       <Link to="/image-movement-grid-test2" className={classes.centeredLink}>
         Image Movement Grid Test2
       </Link>

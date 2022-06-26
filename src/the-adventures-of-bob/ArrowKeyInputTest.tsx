@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./ArrowKeyInputTest.module.css";
-import ImagePlacementGrid from "./ImagePlacementGrid";
-import ImageMovementGrid from "./ImageMovementGrid";
+//import ImagePlacementGrid from "./ImagePlacementGrid";
+//import ImageMovementGrid from "./ImageMovementGrid";
 import bob from "./bobseventy.png";
 import blankgridsquareseventy from "./blankgridsquareseventy.png";
 import ImagesThatMove from "./ImagesThatMove";
@@ -113,7 +113,7 @@ const ArrowKeyInputTest: React.FC = () => {
     }
   }
 
-  const gridImageList2 = gridImages2.map((gridImage2) => (
+  /*const gridImageList2 = gridImages2.map((gridImage2) => (
     <ImageMovementGrid
       key={gridImage2.key}
       image={gridImage2.image}
@@ -122,9 +122,9 @@ const ArrowKeyInputTest: React.FC = () => {
       left={gridImage2.left}
       top={gridImage2.top}
     />
-  ));
+  ));*/
 
-  const gridImageList3 = gridImages.map((gridImage) => (
+  /*const gridImageList3 = gridImages.map((gridImage) => (
     <ImagePlacementGrid
       key={gridImage.key}
       image={blankgridsquareseventy}
@@ -133,7 +133,7 @@ const ArrowKeyInputTest: React.FC = () => {
       left={gridImage.left + "px"}
       top={gridImage.top}
     />
-  ));
+  ));*/
 
   return (
     <div className={classes.outerDiv}>
