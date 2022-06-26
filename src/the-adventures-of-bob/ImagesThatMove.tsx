@@ -70,15 +70,15 @@ const ImagesThatMove: React.FC<{
           (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved - 1
         );
       }
-    }, 35);
+    }, 250);
     return () => clearInterval(interval);
   }, []);
 
   const gridImages = [];
   let key = 0;
 
-  for (let index = 0; index < props.aspectRatioHeight - 1; index++) {
-    for (let index2 = 0; index2 < props.aspectRatioWidth; index2++) {
+  for (let index = 0; index < 1; index++) {
+    for (let index2 = 0; index2 < 1; index2++) {
       gridImages.push({
         key: key,
         image: bob,
