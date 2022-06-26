@@ -17,6 +17,7 @@ const ImagesThatMove: React.FC<{
   useEffect(() => {
     let leftKey = false;
     let rightKey = false;
+    let click = false;
 
     document.addEventListener("keydown", function (e) {
       switch (e.key) {
@@ -60,15 +61,26 @@ const ImagesThatMove: React.FC<{
       }
     });
 
+    document.addEventListener("click", function (e) {
+      console.log("A click!");
+      click = true;
+    });
+
     const interval = setInterval(() => {
       if (rightKey) {
         setImageMovementGridSquaresMoved(
           (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved + 1
         );
-      } else if (leftKey) {
+      }
+      if (leftKey) {
         setImageMovementGridSquaresMoved(
           (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved - 1
         );
+      }
+      if (click) {
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => 0);
+        click = false;
+        console.log("Done clicking!");
       }
     }, 35);
     return () => clearInterval(interval);
