@@ -10,13 +10,9 @@ import Contact from "./pages/Contact";
 import JS_Skills from "./pages/JS_Skills";
 
 import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
-import ImagePlacementGridTest from "./the-adventures-of-bob/ImagePlacementGridTest";
-import MovementTest from "./the-adventures-of-bob/MovementTest";
 import MovementTest2 from "./the-adventures-of-bob/MovementTest2";
 import StressTest from "./the-adventures-of-bob/StressTest";
-import ImageMovementGridTest from "./the-adventures-of-bob/ImageMovementGridTest";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
-import ImageMovementGridTest3 from "./the-adventures-of-bob/ImageMovementGridTest3";
 import ArrowKeyInputTest from "./the-adventures-of-bob/ArrowKeyInputTest";
 
 const App: React.FC = () => {
@@ -46,26 +42,14 @@ const App: React.FC = () => {
       <Route path="/the-adventures-of-bob">
         <TheAdventuresOfBob />
       </Route>
-      <Route path="/image-placement-grid-test">
-        <ImagePlacementGridTest />
-      </Route>
-      <Route path="/movement-test">
-        <MovementTest />
-      </Route>
       <Route path="/movement-test2">
         <MovementTest2 />
       </Route>
       <Route path="/stress-test">
         <StressTest />
       </Route>
-      <Route path="/image-movement-grid-test">
-        <ImageMovementGridTest />
-      </Route>
       <Route path="/image-movement-grid-test2">
         <ImageMovementGridTest2 />
-      </Route>
-      <Route path="/image-movement-grid-test3">
-        <ImageMovementGridTest3 />
       </Route>
       <Route path="/arrow-key-input-test">
         <ArrowKeyInputTest />
