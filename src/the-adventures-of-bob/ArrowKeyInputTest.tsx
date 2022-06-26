@@ -19,7 +19,6 @@ const ArrowKeyInputTest: React.FC = () => {
       aspectRatioWidth / aspectRatioHeight
     ) {
       gameDivWidth--;
-      console.log("gameDivWidth = " + gameDivWidth);
     }
   } else if (
     gameDivWidth / gameDivHeight <
@@ -30,7 +29,6 @@ const ArrowKeyInputTest: React.FC = () => {
       aspectRatioWidth / aspectRatioHeight
     ) {
       gameDivHeight--;
-      console.log("gameDivHeight = " + gameDivHeight);
     }
   }
   //   } else it's perfect already :)
