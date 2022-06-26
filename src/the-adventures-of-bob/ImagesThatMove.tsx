@@ -14,52 +14,52 @@ const ImagesThatMove: React.FC<{
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
     useState(0);
 
-  let leftKey = false;
-  let rightKey = false;
-
-  document.addEventListener("keydown", function (e) {
-    switch (e.key) {
-      case "ArrowLeft":
-        //alert("left");
-        leftKey = true;
-        console.log("Left Down!");
-        break;
-      case "ArrowUp":
-        //alert("up");
-        break;
-      case "ArrowRight":
-        //alert("right");
-        rightKey = true;
-        console.log("Right Down!");
-        break;
-      case "ArrowDown":
-        //alert("down");
-        break;
-    }
-  });
-
-  document.addEventListener("keyup", function (e) {
-    switch (e.key) {
-      case "ArrowLeft":
-        //alert("done left");
-        leftKey = false;
-        console.log("Left Up");
-        break;
-      case "ArrowUp":
-        //alert("done up");
-        break;
-      case "ArrowRight":
-        //alert("done right");
-        rightKey = false;
-        console.log("Right Up");
-        break;
-      case "ArrowDown":
-        //alert("done down");
-        break;
-    }
-  });
-
   useEffect(() => {
+    let leftKey = false;
+    let rightKey = false;
+
+    document.addEventListener("keydown", function (e) {
+      switch (e.key) {
+        case "ArrowLeft":
+          //alert("left");
+          leftKey = true;
+          console.log("Left Down!");
+          break;
+        case "ArrowUp":
+          //alert("up");
+          break;
+        case "ArrowRight":
+          //alert("right");
+          rightKey = true;
+          console.log("Right Down!");
+          break;
+        case "ArrowDown":
+          //alert("down");
+          break;
+      }
+    });
+
+    document.addEventListener("keyup", function (e) {
+      switch (e.key) {
+        case "ArrowLeft":
+          //alert("done left");
+          leftKey = false;
+          console.log("Left Up");
+          break;
+        case "ArrowUp":
+          //alert("done up");
+          break;
+        case "ArrowRight":
+          //alert("done right");
+          rightKey = false;
+          console.log("Right Up");
+          break;
+        case "ArrowDown":
+          //alert("done down");
+          break;
+      }
+    });
+
     const interval = setInterval(() => {
       if (rightKey) {
         setImageMovementGridSquaresMoved(
@@ -70,7 +70,7 @@ const ImagesThatMove: React.FC<{
           (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved - 1
         );
       }
-    }, 250);
+    }, 35);
     return () => clearInterval(interval);
   }, []);
 
