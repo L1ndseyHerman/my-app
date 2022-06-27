@@ -12,7 +12,7 @@ const ImagesThatMove: React.FC<{
   baseGridSquaresPerImage: number;
 }> = (props) => {
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
-    useState(0);
+    useState<[number, number]>([0, 0]);
 
   useEffect(() => {
     let leftKey = false;
@@ -52,17 +52,22 @@ const ImagesThatMove: React.FC<{
 
     const interval = setInterval(() => {
       if (rightKey) {
-        setImageMovementGridSquaresMoved(
-          (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved + 1
-        );
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0] + 1,
+          imageMovementGridSquaresMoved[1],
+        ]);
       }
       if (leftKey) {
-        setImageMovementGridSquaresMoved(
-          (imageMovementGridSquaresMoved) => imageMovementGridSquaresMoved - 1
-        );
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0] - 1,
+          imageMovementGridSquaresMoved[1],
+        ]);
       }
       if (click) {
-        setImageMovementGridSquaresMoved(0);
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0],
+          imageMovementGridSquaresMoved[1] - 1,
+        ]);
         click = false;
         console.log("Done clicking!");
       }
@@ -98,8 +103,7 @@ const ImagesThatMove: React.FC<{
           props.halfOfRemainingHeight +
           props.bobHeight +
           props.bobHeight * 7 +
-          3 * 2 +
-          "px",
+          3 * 2,
       });
 
       key++;
@@ -114,11 +118,16 @@ const ImagesThatMove: React.FC<{
       height={gridImage.height}
       left={
         gridImage.left +
-        (imageMovementGridSquaresMoved * props.bobWidth) /
+        (imageMovementGridSquaresMoved[0] * props.bobWidth) /
           props.baseGridSquaresPerImage +
         "px"
       }
-      top={gridImage.top}
+      top={
+        gridImage.top +
+        (imageMovementGridSquaresMoved[1] * props.bobHeight) /
+          props.baseGridSquaresPerImage +
+        "px"
+      }
     />
   ));
 
