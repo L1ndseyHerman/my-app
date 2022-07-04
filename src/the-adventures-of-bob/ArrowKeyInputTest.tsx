@@ -107,6 +107,8 @@ const ArrowKeyInputTest: React.FC = () => {
           (bobHeight / baseGridSquaresPerImage) * index +
           3 * 2 +
           "px",
+        //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        containsBob: false,
       });
 
       key2++;
@@ -169,6 +171,8 @@ const ArrowKeyInputTest: React.FC = () => {
           halfOfRemainingWidth={halfOfRemainingWidth}
           halfOfRemainingHeight={halfOfRemainingHeight}
           baseGridSquaresPerImage={baseGridSquaresPerImage}
+          //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          littleGrid={gridImages2}
         />
       </div>
     </div>

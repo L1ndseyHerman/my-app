@@ -10,6 +10,15 @@ const ImagesThatMove: React.FC<{
   halfOfRemainingWidth: number;
   halfOfRemainingHeight: number;
   baseGridSquaresPerImage: number;
+  littleGrid: {
+    key: number;
+    image: string;
+    width: number;
+    height: number;
+    left: string;
+    top: string;
+    containsBob: boolean;
+  }[];
 }> = (props) => {
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
     useState<[number, number]>([0, 0]);
@@ -63,20 +72,44 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[1],
         ]);
       }
-      if (click) {
+      //if (click) {
+      if (imageMovementGridSquaresMoved[1] === 0 && click === true) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0],
+          imageMovementGridSquaresMoved[1] - 10,
+          /*(imageMovementGridSquaresMoved[1] =
+              imageMovementGridSquaresMoved[1] - 10),*/
+        ]);
+        //click = false;
+        console.log("Done clicking 0");
+        console.log(imageMovementGridSquaresMoved[1]);
+      }
+      //} else if (imageMovementGridSquaresMoved[1] === -10) {
+      if (imageMovementGridSquaresMoved[1] === -10) {
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0],
+          imageMovementGridSquaresMoved[1] - 5,
+          /*(imageMovementGridSquaresMoved[1] =
+            imageMovementGridSquaresMoved[1] - 5),*/
+        ]);
+        click = false;
+        console.log("Done clicking -10");
+        console.log(imageMovementGridSquaresMoved[1]);
+      }
+      /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
           imageMovementGridSquaresMoved[1] - 1,
         ]);
         click = false;
-        console.log("Done clicking!");
-      }
+        console.log("Done clicking!");*/
     }, 25);
     return () => clearInterval(interval);
   }, []);
 
   const gridImages = [];
   let key = 0;
+
+  //  Need to set those 10x10 grid things to have Bob in it here:
 
   for (let index = 0; index < 1; index++) {
     for (let index2 = 0; index2 < 1; index2++) {
