@@ -12,6 +12,7 @@ import JS_Skills from "./pages/JS_Skills";
 import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
 import ArrowKeyInputTest from "./the-adventures-of-bob/ArrowKeyInputTest";
+import ClickTest from "./the-adventures-of-bob/ClickTest";
 
 const App: React.FC = () => {
   return (
@@ -45,6 +46,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/arrow-key-input-test">
         <ArrowKeyInputTest />
+      </Route>
+      <Route path="/click-test">
+        <ClickTest />
       </Route>
     </Switch>
   );

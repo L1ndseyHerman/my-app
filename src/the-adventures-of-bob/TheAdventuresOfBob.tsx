@@ -12,6 +12,9 @@ const TheAdventuresOfBob: React.FC = () => {
       <Link to="/arrow-key-input-test" className={classes.centeredLink}>
         Arrow Key Input Test
       </Link>
+      <Link to="/click-test" className={classes.centeredLink}>
+        Click Test
+      </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site
       </Link>

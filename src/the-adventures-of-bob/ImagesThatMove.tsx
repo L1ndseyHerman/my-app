@@ -55,37 +55,35 @@ const ImagesThatMove: React.FC<{
     });
 
     document.addEventListener("click", function () {
+      //document.addEventListener("onmouseup", function () {
       console.log("A click!");
-      click = true;
+      if (click === false) {
+        click = true;
+      }
     });
 
     const interval = setInterval(() => {
-      if (rightKey) {
+      if (rightKey && click === false) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] + 1,
           imageMovementGridSquaresMoved[1],
         ]);
-      }
-      if (leftKey) {
-        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-          imageMovementGridSquaresMoved[0] - 1,
-          imageMovementGridSquaresMoved[1],
-        ]);
-      }
-      //if (click) {
-      if (imageMovementGridSquaresMoved[1] === 0 && click === true) {
+        console.log("Right key useState " + imageMovementGridSquaresMoved[0]);
+
+        //if (click) {
+      } else if (imageMovementGridSquaresMoved[1] === 0 && click === true) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
-          imageMovementGridSquaresMoved[1] - 10,
+          -10,
           /*(imageMovementGridSquaresMoved[1] =
               imageMovementGridSquaresMoved[1] - 10),*/
         ]);
         //click = false;
-        console.log("Done clicking 0");
+        console.log("Done clicking 0 whoa whoa oh");
         console.log(imageMovementGridSquaresMoved[1]);
       }
       //} else if (imageMovementGridSquaresMoved[1] === -10) {
-      if (imageMovementGridSquaresMoved[1] === -10) {
+      if (imageMovementGridSquaresMoved[1] <= -10) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
           imageMovementGridSquaresMoved[1] - 5,
@@ -95,14 +93,50 @@ const ImagesThatMove: React.FC<{
         click = false;
         console.log("Done clicking -10");
         console.log(imageMovementGridSquaresMoved[1]);
-      }
-      /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+      } else if (leftKey) {
+        /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
           imageMovementGridSquaresMoved[1] - 1,
         ]);
         click = false;
         console.log("Done clicking!");*/
-    }, 25);
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0] - 1,
+          imageMovementGridSquaresMoved[1],
+        ]);
+
+        //if (click) {
+        if (imageMovementGridSquaresMoved[1] === 0) {
+          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+            imageMovementGridSquaresMoved[0],
+            10,
+            /*(imageMovementGridSquaresMoved[1] =
+              imageMovementGridSquaresMoved[1] - 10),*/
+          ]);
+          //click = false;
+          console.log("Done clicking 0 oh whoa whoa");
+          console.log(imageMovementGridSquaresMoved[1]);
+        }
+        //} else if (imageMovementGridSquaresMoved[1] === -10) {
+        if (imageMovementGridSquaresMoved[1] <= -10) {
+          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+            imageMovementGridSquaresMoved[0],
+            imageMovementGridSquaresMoved[1] - 5,
+            /*(imageMovementGridSquaresMoved[1] =
+            imageMovementGridSquaresMoved[1] - 5),*/
+          ]);
+          click = false;
+          console.log("Done clicking -10");
+          console.log(imageMovementGridSquaresMoved[1]);
+        }
+        /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+          imageMovementGridSquaresMoved[0],
+          imageMovementGridSquaresMoved[1] - 1,
+        ]);
+        click = false;
+        console.log("Done clicking!");*/
+      }
+    }, 250);
     return () => clearInterval(interval);
   }, []);
 
