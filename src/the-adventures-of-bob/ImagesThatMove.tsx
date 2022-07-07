@@ -55,99 +55,37 @@ const ImagesThatMove: React.FC<{
     });
 
     document.addEventListener("click", function () {
-      //document.addEventListener("onmouseup", function () {
       console.log("A click!");
-      if (click === false) {
-        click = true;
-      }
+      click = true;
     });
 
     const interval = setInterval(() => {
-      if (rightKey && click === false) {
+      if (rightKey) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] + 1,
           imageMovementGridSquaresMoved[1],
         ]);
-        console.log("Right key useState " + imageMovementGridSquaresMoved[0]);
-
-        //if (click) {
-      } else if (imageMovementGridSquaresMoved[1] === 0 && click === true) {
-        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-          imageMovementGridSquaresMoved[0],
-          -10,
-          /*(imageMovementGridSquaresMoved[1] =
-              imageMovementGridSquaresMoved[1] - 10),*/
-        ]);
-        //click = false;
-        console.log("Done clicking 0 whoa whoa oh");
-        console.log(imageMovementGridSquaresMoved[1]);
       }
-      //} else if (imageMovementGridSquaresMoved[1] === -10) {
-      if (imageMovementGridSquaresMoved[1] <= -10) {
-        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-          imageMovementGridSquaresMoved[0],
-          imageMovementGridSquaresMoved[1] - 5,
-          /*(imageMovementGridSquaresMoved[1] =
-            imageMovementGridSquaresMoved[1] - 5),*/
-        ]);
-        click = false;
-        console.log("Done clicking -10");
-        console.log(imageMovementGridSquaresMoved[1]);
-      } else if (leftKey) {
-        /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-          imageMovementGridSquaresMoved[0],
-          imageMovementGridSquaresMoved[1] - 1,
-        ]);
-        click = false;
-        console.log("Done clicking!");*/
+      if (leftKey) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] - 1,
           imageMovementGridSquaresMoved[1],
         ]);
-
-        //if (click) {
-        if (imageMovementGridSquaresMoved[1] === 0) {
-          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-            imageMovementGridSquaresMoved[0],
-            10,
-            /*(imageMovementGridSquaresMoved[1] =
-              imageMovementGridSquaresMoved[1] - 10),*/
-          ]);
-          //click = false;
-          console.log("Done clicking 0 oh whoa whoa");
-          console.log(imageMovementGridSquaresMoved[1]);
-        }
-        //} else if (imageMovementGridSquaresMoved[1] === -10) {
-        if (imageMovementGridSquaresMoved[1] <= -10) {
-          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-            imageMovementGridSquaresMoved[0],
-            imageMovementGridSquaresMoved[1] - 5,
-            /*(imageMovementGridSquaresMoved[1] =
-            imageMovementGridSquaresMoved[1] - 5),*/
-          ]);
-          click = false;
-          console.log("Done clicking -10");
-          console.log(imageMovementGridSquaresMoved[1]);
-        }
-        /*setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+      }
+      if (click) {
+        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
           imageMovementGridSquaresMoved[1] - 1,
         ]);
         click = false;
-        console.log("Done clicking!");*/
+        console.log("Done clicking!");
       }
-    }, 250);
+    }, 25);
     return () => clearInterval(interval);
   }, []);
 
-  console.log(
-    "Pls work height outside useEffect: " + imageMovementGridSquaresMoved[1]
-  );
-
   const gridImages = [];
   let key = 0;
-
-  //  Need to set those 10x10 grid things to have Bob in it here:
 
   for (let index = 0; index < 1; index++) {
     for (let index2 = 0; index2 < 1; index2++) {
