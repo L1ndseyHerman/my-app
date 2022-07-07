@@ -110,8 +110,6 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[1] + imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[2] + 2,
         ]);
-        click = false;
-        console.log("Done clicking!");
       }
     }, 25);
     return () => clearInterval(interval);
