@@ -140,6 +140,10 @@ const ImagesThatMove: React.FC<{
     return () => clearInterval(interval);
   }, []);
 
+  console.log(
+    "Pls work height outside useEffect: " + imageMovementGridSquaresMoved[1]
+  );
+
   const gridImages = [];
   let key = 0;
 
