@@ -21,7 +21,7 @@ const ImagesThatMove: React.FC<{
   }[];
 }> = (props) => {
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
-    useState<[number, number, number]>([0, 0, -10]);
+    useState<[number, number, number, boolean]>([0, 0, -10, false]);
 
   //const [amountToJumpOrFall, setAmountToJumpOrFall] = useState<number>(-10);
 
@@ -35,7 +35,56 @@ const ImagesThatMove: React.FC<{
   //console.log(amountToJumpOrFall);
   console.log(imageMovementGridSquaresMoved[2]);
 
-  let click = false;
+  //let click = false;
+
+  /*document.addEventListener("click", function () {
+    console.log("A click!");
+    //click = true;
+    let jumpInterval: NodeJS.Timeout | null = null;
+    let timesRun = 0;
+    if (!imageMovementGridSquaresMoved[3]) {
+      jumpInterval = setInterval(() => {
+        timesRun++;
+        if (timesRun >= 12) {
+          if (jumpInterval) {
+            clearInterval(jumpInterval);
+            timesRun = 0;
+            jumpInterval = null;
+            setImageMovementGridSquaresMoved(
+              (imageMovementGridSquaresMoved) => [
+                imageMovementGridSquaresMoved[0],
+                imageMovementGridSquaresMoved[1],
+                -10,
+                false,
+              ]
+            );
+          }
+        } else {
+          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+            imageMovementGridSquaresMoved[0],
+            imageMovementGridSquaresMoved[1] + imageMovementGridSquaresMoved[2],
+            imageMovementGridSquaresMoved[2] + 2,
+            true,
+          ]);
+        }
+      }, 50);
+    }
+  });*/
+
+  /*if (imageMovementGridSquaresMoved[2] >= 12) {
+      //click = false;
+      console.log("Done clicking for reals!");
+      setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
+        imageMovementGridSquaresMoved[0],
+        imageMovementGridSquaresMoved[1],
+        -10,
+        false,
+      ]);
+      if (jumpInterval) {
+        clearInterval(jumpInterval);
+      }
+    }
+  });*/
 
   useEffect(() => {
     let leftKey = false;
@@ -69,8 +118,45 @@ const ImagesThatMove: React.FC<{
 
     document.addEventListener("click", function () {
       console.log("A click!");
-      click = true;
+      //click = true;
+      let jumpInterval: NodeJS.Timeout | null = null;
+      let timesRun = 0;
+      if (!imageMovementGridSquaresMoved[3]) {
+        jumpInterval = setInterval(() => {
+          timesRun++;
+          if (timesRun >= 12) {
+            if (jumpInterval) {
+              clearInterval(jumpInterval);
+              timesRun = 0;
+              jumpInterval = null;
+              setImageMovementGridSquaresMoved(
+                (imageMovementGridSquaresMoved) => [
+                  imageMovementGridSquaresMoved[0],
+                  imageMovementGridSquaresMoved[1],
+                  -10,
+                  false,
+                ]
+              );
+            }
+          } else {
+            setImageMovementGridSquaresMoved(
+              (imageMovementGridSquaresMoved) => [
+                imageMovementGridSquaresMoved[0],
+                imageMovementGridSquaresMoved[1] +
+                  imageMovementGridSquaresMoved[2],
+                imageMovementGridSquaresMoved[2] + 2,
+                true,
+              ]
+            );
+          }
+        }, 50);
+      }
     });
+
+    /*document.addEventListener("click", function () {
+      console.log("A click!");
+      click = true;
+    });*/
 
     /*if (imageMovementGridSquaresMoved[2] >= 12) {
       click = false;
@@ -95,6 +181,7 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[0] + 1,
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
+          imageMovementGridSquaresMoved[3],
         ]);
       }
       if (leftKey) {
@@ -102,20 +189,21 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[0] - 1,
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
+          imageMovementGridSquaresMoved[3],
         ]);
       }
-      if (click) {
+      /*if (click) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0],
           imageMovementGridSquaresMoved[1] + imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[2] + 2,
         ]);
-      }
+      }*/
     }, 25);
     return () => clearInterval(interval);
   }, []);
 
-  if (imageMovementGridSquaresMoved[2] >= 12) {
+  /*if (imageMovementGridSquaresMoved[2] >= 12) {
     click = false;
     console.log("Done clicking for reals!");
     setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
@@ -124,7 +212,7 @@ const ImagesThatMove: React.FC<{
       -10,
     ]);
     console.log(imageMovementGridSquaresMoved[2]);
-  }
+  }*/
 
   const gridImages = [];
   let key = 0;
