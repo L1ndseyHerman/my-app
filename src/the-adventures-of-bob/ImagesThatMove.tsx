@@ -26,6 +26,7 @@ const ImagesThatMove: React.FC<{
   //  [3] = are you jumping/falling or staying still vertially?
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
     useState<[number, number, number, boolean]>([0, 0, -10, false]);
+  let jumpInterval: NodeJS.Timeout | null = null;
 
   useEffect(() => {
     let leftKey = false;
@@ -54,9 +55,8 @@ const ImagesThatMove: React.FC<{
     });
 
     document.addEventListener("click", function () {
-      let jumpInterval: NodeJS.Timeout | null = null;
       let timesRun = 0;
-      if (!imageMovementGridSquaresMoved[3]) {
+      if (jumpInterval === null) {
         jumpInterval = setInterval(() => {
           timesRun++;
           if (timesRun >= 12) {
@@ -89,7 +89,6 @@ const ImagesThatMove: React.FC<{
     });
 
     const interval = setInterval(() => {
-      console.log(imageMovementGridSquaresMoved[2]);
       if (rightKey) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] + 1,

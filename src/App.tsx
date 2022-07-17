@@ -11,7 +11,7 @@ import JS_Skills from "./pages/JS_Skills";
 
 import TheAdventuresOfBob from "./the-adventures-of-bob/TheAdventuresOfBob";
 import ImageMovementGridTest2 from "./the-adventures-of-bob/ImageMovementGridTest2";
-import ArrowKeyInputTest from "./the-adventures-of-bob/ArrowKeyInputTest";
+import ArrowKeyAndClickInputTest from "./the-adventures-of-bob/ArrowKeyAndClickInputTest";
 
 const App: React.FC = () => {
   return (
@@ -43,8 +43,8 @@ const App: React.FC = () => {
       <Route path="/image-movement-grid-test2">
         <ImageMovementGridTest2 />
       </Route>
-      <Route path="/arrow-key-input-test">
-        <ArrowKeyInputTest />
+      <Route path="/arrow-key-and-click-input-test">
+        <ArrowKeyAndClickInputTest />
       </Route>
     </Switch>
   );

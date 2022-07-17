@@ -9,8 +9,11 @@ const TheAdventuresOfBob: React.FC = () => {
       <Link to="/image-movement-grid-test2" className={classes.centeredLink}>
         Image Movement Grid Test2
       </Link>
-      <Link to="/arrow-key-input-test" className={classes.centeredLink}>
-        Arrow Key Input Test
+      <Link
+        to="/arrow-key-and-click-input-test"
+        className={classes.centeredLink}
+      >
+        Arrow Key And Click Input Test
       </Link>
       <Link to="/" className={classes.centeredLink}>
         My Personal Site

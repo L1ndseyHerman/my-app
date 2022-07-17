@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ArrowKeyInputTest.module.css";
+import classes from "./ArrowKeyAndClickInputTest.module.css";
 //import ImagePlacementGrid from "./ImagePlacementGrid";
 //import ImageMovementGrid from "./ImageMovementGrid";
 import bob from "./bobseventy.png";
