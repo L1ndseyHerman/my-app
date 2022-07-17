@@ -20,71 +20,12 @@ const ImagesThatMove: React.FC<{
     containsBob: boolean;
   }[];
 }> = (props) => {
+  //  [0] = amount moved l/r
+  //  [1] = amount moved up/down
+  //  [2] = amount to jump/fall next
+  //  [3] = are you jumping/falling or staying still vertially?
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
     useState<[number, number, number, boolean]>([0, 0, -10, false]);
-
-  //const [amountToJumpOrFall, setAmountToJumpOrFall] = useState<number>(-10);
-
-  console.log(imageMovementGridSquaresMoved[0]);
-  console.log(imageMovementGridSquaresMoved[1]);
-
-  //let amountToJumpOrFall = -10;
-  //if (imageMovementGridSquaresMoved[1] === -10) {
-  //setAmountToJumpOrFall(-5);
-  //}
-  //console.log(amountToJumpOrFall);
-  console.log(imageMovementGridSquaresMoved[2]);
-
-  //let click = false;
-
-  /*document.addEventListener("click", function () {
-    console.log("A click!");
-    //click = true;
-    let jumpInterval: NodeJS.Timeout | null = null;
-    let timesRun = 0;
-    if (!imageMovementGridSquaresMoved[3]) {
-      jumpInterval = setInterval(() => {
-        timesRun++;
-        if (timesRun >= 12) {
-          if (jumpInterval) {
-            clearInterval(jumpInterval);
-            timesRun = 0;
-            jumpInterval = null;
-            setImageMovementGridSquaresMoved(
-              (imageMovementGridSquaresMoved) => [
-                imageMovementGridSquaresMoved[0],
-                imageMovementGridSquaresMoved[1],
-                -10,
-                false,
-              ]
-            );
-          }
-        } else {
-          setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-            imageMovementGridSquaresMoved[0],
-            imageMovementGridSquaresMoved[1] + imageMovementGridSquaresMoved[2],
-            imageMovementGridSquaresMoved[2] + 2,
-            true,
-          ]);
-        }
-      }, 50);
-    }
-  });*/
-
-  /*if (imageMovementGridSquaresMoved[2] >= 12) {
-      //click = false;
-      console.log("Done clicking for reals!");
-      setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-        imageMovementGridSquaresMoved[0],
-        imageMovementGridSquaresMoved[1],
-        -10,
-        false,
-      ]);
-      if (jumpInterval) {
-        clearInterval(jumpInterval);
-      }
-    }
-  });*/
 
   useEffect(() => {
     let leftKey = false;
@@ -94,11 +35,9 @@ const ImagesThatMove: React.FC<{
       switch (e.key) {
         case "ArrowLeft":
           leftKey = true;
-          console.log("Left Down!");
           break;
         case "ArrowRight":
           rightKey = true;
-          console.log("Right Down!");
           break;
       }
     });
@@ -107,18 +46,14 @@ const ImagesThatMove: React.FC<{
       switch (e.key) {
         case "ArrowLeft":
           leftKey = false;
-          console.log("Left Up");
           break;
         case "ArrowRight":
           rightKey = false;
-          console.log("Right Up");
           break;
       }
     });
 
     document.addEventListener("click", function () {
-      console.log("A click!");
-      //click = true;
       let jumpInterval: NodeJS.Timeout | null = null;
       let timesRun = 0;
       if (!imageMovementGridSquaresMoved[3]) {
@@ -153,28 +88,7 @@ const ImagesThatMove: React.FC<{
       }
     });
 
-    /*document.addEventListener("click", function () {
-      console.log("A click!");
-      click = true;
-    });*/
-
-    /*if (imageMovementGridSquaresMoved[2] >= 12) {
-      click = false;
-      console.log("Done clicking for reals!");
-    }*/
-
-    /*if (imageMovementGridSquaresMoved[2] >= 12) {
-      click = false;
-      console.log("Done clicking for reals!");
-      setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-        imageMovementGridSquaresMoved[0],
-        imageMovementGridSquaresMoved[1],
-        -10,
-      ]);
-    }*/
-
     const interval = setInterval(() => {
-      //console.log(amountToJumpOrFall);
       console.log(imageMovementGridSquaresMoved[2]);
       if (rightKey) {
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
@@ -192,27 +106,9 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[3],
         ]);
       }
-      /*if (click) {
-        setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-          imageMovementGridSquaresMoved[0],
-          imageMovementGridSquaresMoved[1] + imageMovementGridSquaresMoved[2],
-          imageMovementGridSquaresMoved[2] + 2,
-        ]);
-      }*/
     }, 25);
     return () => clearInterval(interval);
   }, []);
-
-  /*if (imageMovementGridSquaresMoved[2] >= 12) {
-    click = false;
-    console.log("Done clicking for reals!");
-    setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
-      imageMovementGridSquaresMoved[0],
-      imageMovementGridSquaresMoved[1],
-      -10,
-    ]);
-    console.log(imageMovementGridSquaresMoved[2]);
-  }*/
 
   const gridImages = [];
   let key = 0;
