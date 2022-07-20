@@ -84,9 +84,12 @@ const ArrowKeyInputTest: React.FC = () => {
   //let plsWorkDobArray: boolean[][] | null;
   //let plsWorkDobArray: boolean[][];
   //let plsWorkDobArray = new Array([]: boolean);
-  const plsWorkObjects = [];
+  //const plsWorkObjects = [];
   //let plsWorkDobArray = [[]];
   //let plsWorkDobArray = [][];
+  //const plsWorkDobArray = new Array([aspectRatioWidth][aspectRatioHeight]);
+  //const plsWorkDobArray = new Array([][]);
+  const plsWorkDobArray = [];
 
   for (
     let index = 0;
@@ -106,11 +109,19 @@ const ArrowKeyInputTest: React.FC = () => {
       //}
       //plsWorkDobArray[index2].push(false);
       //plsWorkDobArray[index2][index] = false;
+      //if (Array.isArray(plsWorkDobArray[index2])) {
+      if (Array.isArray(plsWorkDobArray[index])) {
+        plsWorkDobArray[index][index2] = false;
+      } else {
+        plsWorkDobArray[index] = [false];
+        //plsWorkDobArray[0] = false;
+      }
       //plsWorkDobArray[index2[index]].push(false);
-      plsWorkObjects.push({
+      //plsWorkDobArray[index2[index]].push(false);
+      /*plsWorkObjects.push({
         x: index2,
         y: index,
-      });
+      });*/
 
       gridImages2.push({
         key: key2,
@@ -135,6 +146,8 @@ const ArrowKeyInputTest: React.FC = () => {
       key2++;
     }
   }
+
+  console.log(plsWorkDobArray);
 
   /*const gridImageList2 = gridImages2.map((gridImage2) => (
     <ImageMovementGrid
@@ -194,7 +207,7 @@ const ArrowKeyInputTest: React.FC = () => {
           baseGridSquaresPerImage={baseGridSquaresPerImage}
           //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           littleGrid={gridImages2}
-          plsWorkObjects={plsWorkObjects}
+          plsWorkDobArray={plsWorkDobArray}
         />
       </div>
     </div>
