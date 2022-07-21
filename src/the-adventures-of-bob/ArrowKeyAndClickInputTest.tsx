@@ -79,16 +79,6 @@ const ArrowKeyInputTest: React.FC = () => {
 
   const gridImages2 = [];
   let key2 = 0;
-
-  //let plsWorkDobArray: boolean[][] | null = null;
-  //let plsWorkDobArray: boolean[][] | null;
-  //let plsWorkDobArray: boolean[][];
-  //let plsWorkDobArray = new Array([]: boolean);
-  //const plsWorkObjects = [];
-  //let plsWorkDobArray = [[]];
-  //let plsWorkDobArray = [][];
-  //const plsWorkDobArray = new Array([aspectRatioWidth][aspectRatioHeight]);
-  //const plsWorkDobArray = new Array([][]);
   const plsWorkDobArray = [];
 
   for (
@@ -97,31 +87,16 @@ const ArrowKeyInputTest: React.FC = () => {
     aspectRatioHeight * baseGridSquaresPerImage - 1 * baseGridSquaresPerImage;
     index++
   ) {
-    //plsWorkDobArray.push([]);
     for (
       let index2 = 0;
       index2 < aspectRatioWidth * baseGridSquaresPerImage;
       index2++
     ) {
-      //plsWorkDobArray[[]] = false;
-      //if (plsWorkDobArray === null) {
-      //let plsWorkDobArray[index2][index] = false;
-      //}
-      //plsWorkDobArray[index2].push(false);
-      //plsWorkDobArray[index2][index] = false;
-      //if (Array.isArray(plsWorkDobArray[index2])) {
-      if (Array.isArray(plsWorkDobArray[index])) {
-        plsWorkDobArray[index][index2] = false;
+      if (Array.isArray(plsWorkDobArray[index2])) {
+        plsWorkDobArray[index2][index] = false;
       } else {
-        plsWorkDobArray[index] = [false];
-        //plsWorkDobArray[0] = false;
+        plsWorkDobArray[index2] = [false];
       }
-      //plsWorkDobArray[index2[index]].push(false);
-      //plsWorkDobArray[index2[index]].push(false);
-      /*plsWorkObjects.push({
-        x: index2,
-        y: index,
-      });*/
 
       gridImages2.push({
         key: key2,

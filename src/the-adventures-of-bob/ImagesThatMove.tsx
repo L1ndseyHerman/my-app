@@ -20,10 +20,6 @@ const ImagesThatMove: React.FC<{
     containsBob: boolean;
   }[];
   plsWorkDobArray: boolean[][];
-  /*plsWorkObjects: {
-    x: number;
-    y: number;
-  }[];*/
 }> = (props) => {
   //  [0] = amount moved l/r
   //  [1] = amount moved up/down
@@ -32,7 +28,6 @@ const ImagesThatMove: React.FC<{
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
     useState<[number, number, number, boolean]>([0, 0, -10, false]);
   let jumpInterval: NodeJS.Timeout | null = null;
-  //const plsWorkDobArray = props.plsWorkDobArray;
 
   useEffect(() => {
     let leftKey = false;
@@ -138,21 +133,13 @@ const ImagesThatMove: React.FC<{
   }
 
   //  Going to try to get this collision grid working, get it to find Bob:
-  for (
-    /*let index = gridImages[0].left;
-    index < gridImages[0].left + gridImages[0].width;
-    index = index + props.baseGridSquaresPerImage*/
-    let index = 0;
-    index < props.baseGridSquaresPerImage;
-    index++
-  ) {
+  for (let index = 0; index < props.baseGridSquaresPerImage; index++) {
     props.littleGrid[index].containsBob = true;
     console.log("Index " + index + " of littleGrid contains Bob!");
 
     //                          Bottom-most row, use the variables at some pt.
     props.plsWorkDobArray[index][0] = true;
     console.log("Index " + index + " of dobArray contains Bob!");
-    //props.plsWorkObjects.indexOf({x: 1})
   }
 
   const gridImageList = gridImages.map((gridImage) => (
