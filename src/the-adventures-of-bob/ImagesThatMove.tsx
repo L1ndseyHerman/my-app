@@ -19,14 +19,20 @@ const ImagesThatMove: React.FC<{
     top: string;
     containsBob: boolean;
   }[];
-  plsWorkDobArray: boolean[][];
+  movementGrid: boolean[][];
 }> = (props) => {
   //  [0] = amount moved l/r
   //  [1] = amount moved up/down
   //  [2] = amount to jump/fall next
   //  [3] = are you jumping/falling or staying still vertially?
   const [imageMovementGridSquaresMoved, setImageMovementGridSquaresMoved] =
-    useState<[number, number, number, boolean]>([0, 0, -10, false]);
+    useState<[number, number, number, boolean, boolean[][]]>([
+      0,
+      0,
+      -10,
+      false,
+      props.movementGrid,
+    ]);
   let jumpInterval: NodeJS.Timeout | null = null;
 
   useEffect(() => {
@@ -71,6 +77,7 @@ const ImagesThatMove: React.FC<{
                   imageMovementGridSquaresMoved[1],
                   -10,
                   false,
+                  props.movementGrid,
                 ]
               );
             }
@@ -82,6 +89,7 @@ const ImagesThatMove: React.FC<{
                   imageMovementGridSquaresMoved[2],
                 imageMovementGridSquaresMoved[2] + 2,
                 true,
+                props.movementGrid,
               ]
             );
           }
@@ -96,6 +104,7 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[3],
+          props.movementGrid,
         ]);
       }
       if (leftKey) {
@@ -104,6 +113,7 @@ const ImagesThatMove: React.FC<{
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[3],
+          props.movementGrid,
         ]);
       }
     }, 25);
@@ -138,7 +148,7 @@ const ImagesThatMove: React.FC<{
     console.log("Index " + index + " of littleGrid contains Bob!");
 
     //                          Bottom-most row, use the variables at some pt.
-    props.plsWorkDobArray[index][0] = true;
+    props.movementGrid[index][0] = true;
     console.log("Index " + index + " of dobArray contains Bob!");
   }
 

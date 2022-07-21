@@ -79,23 +79,23 @@ const ArrowKeyInputTest: React.FC = () => {
 
   const gridImages2 = [];
   let key2 = 0;
-  const plsWorkDobArray = [];
+  const movementGrid = [];
 
   for (
     let index = 0;
-    index <
-    aspectRatioHeight * baseGridSquaresPerImage - 1 * baseGridSquaresPerImage;
+    index < aspectRatioWidth * baseGridSquaresPerImage;
     index++
   ) {
     for (
       let index2 = 0;
-      index2 < aspectRatioWidth * baseGridSquaresPerImage;
+      index2 <
+      aspectRatioHeight * baseGridSquaresPerImage - 1 * baseGridSquaresPerImage;
       index2++
     ) {
-      if (Array.isArray(plsWorkDobArray[index2])) {
-        plsWorkDobArray[index2][index] = false;
+      if (Array.isArray(movementGrid[index])) {
+        movementGrid[index][index2] = false;
       } else {
-        plsWorkDobArray[index2] = [false];
+        movementGrid[index] = [false];
       }
 
       gridImages2.push({
@@ -106,12 +106,12 @@ const ArrowKeyInputTest: React.FC = () => {
         left:
           halfOfRemainingWidth +
           3 +
-          (index2 * bobWidth) / baseGridSquaresPerImage +
+          (index * bobWidth) / baseGridSquaresPerImage +
           "px",
         top:
           halfOfRemainingHeight +
           bobHeight +
-          (bobHeight / baseGridSquaresPerImage) * index +
+          (bobHeight / baseGridSquaresPerImage) * index2 +
           3 * 2 +
           "px",
         //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -122,7 +122,7 @@ const ArrowKeyInputTest: React.FC = () => {
     }
   }
 
-  console.log(plsWorkDobArray);
+  console.log(movementGrid);
 
   /*const gridImageList2 = gridImages2.map((gridImage2) => (
     <ImageMovementGrid
@@ -182,7 +182,7 @@ const ArrowKeyInputTest: React.FC = () => {
           baseGridSquaresPerImage={baseGridSquaresPerImage}
           //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           littleGrid={gridImages2}
-          plsWorkDobArray={plsWorkDobArray}
+          movementGrid={movementGrid}
         />
       </div>
     </div>
