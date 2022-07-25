@@ -180,8 +180,6 @@ const ArrowKeyInputTest: React.FC = () => {
           halfOfRemainingWidth={halfOfRemainingWidth}
           halfOfRemainingHeight={halfOfRemainingHeight}
           baseGridSquaresPerImage={baseGridSquaresPerImage}
-          //  IMPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-          littleGrid={gridImages2}
           movementGrid={movementGrid}
         />
       </div>

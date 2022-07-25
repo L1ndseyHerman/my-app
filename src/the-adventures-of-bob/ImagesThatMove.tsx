@@ -10,15 +10,6 @@ const ImagesThatMove: React.FC<{
   halfOfRemainingWidth: number;
   halfOfRemainingHeight: number;
   baseGridSquaresPerImage: number;
-  littleGrid: {
-    key: number;
-    image: string;
-    width: number;
-    height: number;
-    left: string;
-    top: string;
-    containsBob: boolean;
-  }[];
   movementGrid: boolean[][];
 }> = (props) => {
   //  [0] = amount moved l/r
@@ -77,7 +68,7 @@ const ImagesThatMove: React.FC<{
                   imageMovementGridSquaresMoved[1],
                   -10,
                   false,
-                  props.movementGrid,
+                  imageMovementGridSquaresMoved[4],
                 ]
               );
             }
@@ -89,7 +80,7 @@ const ImagesThatMove: React.FC<{
                   imageMovementGridSquaresMoved[2],
                 imageMovementGridSquaresMoved[2] + 2,
                 true,
-                props.movementGrid,
+                imageMovementGridSquaresMoved[4],
               ]
             );
           }
@@ -98,27 +89,96 @@ const ImagesThatMove: React.FC<{
     });
 
     const interval = setInterval(() => {
+      const tempArray: any = [];
       if (rightKey) {
+        //const tempArray = [];
+        for (
+          let index = 0;
+          index < imageMovementGridSquaresMoved[4].length;
+          index++
+        ) {
+          //console.log(index);
+          for (
+            let index2 = 0;
+            index2 < imageMovementGridSquaresMoved[4][index].length;
+            index2++
+          ) {
+            //console.log(index2);
+            if (Array.isArray(tempArray[index])) {
+              tempArray[index][index2] = false;
+              if (
+                index >= imageMovementGridSquaresMoved[0] &&
+                index <=
+                  imageMovementGridSquaresMoved[0] +
+                    props.baseGridSquaresPerImage
+              ) {
+                tempArray[index][index2] = true;
+                console.log(index + " " + index2 + " is true!");
+              }
+            } else {
+              tempArray[index] = [false];
+              if (
+                index >= imageMovementGridSquaresMoved[0] &&
+                index <=
+                  imageMovementGridSquaresMoved[0] +
+                    props.baseGridSquaresPerImage
+              ) {
+                tempArray[index][index2] = true;
+                console.log(index + " " + index2 + " is true!");
+              }
+            }
+          }
+        }
+        //  MOVE TO THE USEEFFECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //  Going to try to get this collision grid working, get it to find Bob:
+        /*for (
+          let index = imageMovementGridSquaresMoved[0] + 1;
+          index < props.baseGridSquaresPerImage + 1;
+          index++
+        ) {
+          //                          Bottom-most row, use the variables at some pt.
+          props.movementGrid[index][0] = true;
+          console.log("Index " + index + " of dobArray contains Bob!");
+        }*/
+
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] + 1,
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[3],
-          props.movementGrid,
+          tempArray,
         ]);
       }
       if (leftKey) {
+        //  MOVE TO THE USEEFFECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //  Going to try to get this collision grid working, get it to find Bob:
+        /*for (let index = 0; index < props.baseGridSquaresPerImage; index++) {
+          //                          Bottom-most row, use the variables at some pt.
+          props.movementGrid[index][0] = true;
+          console.log("Index " + index + " of dobArray contains Bob!");
+        }*/
+
         setImageMovementGridSquaresMoved((imageMovementGridSquaresMoved) => [
           imageMovementGridSquaresMoved[0] - 1,
           imageMovementGridSquaresMoved[1],
           imageMovementGridSquaresMoved[2],
           imageMovementGridSquaresMoved[3],
-          props.movementGrid,
+          imageMovementGridSquaresMoved[4],
         ]);
       }
     }, 25);
     return () => clearInterval(interval);
   }, []);
+
+  /*for (
+    let index = imageMovementGridSquaresMoved[0] + 1;
+    index < props.baseGridSquaresPerImage + 1;
+    index++
+  ) {
+    //                          Bottom-most row, use the variables at some pt.
+    props.movementGrid[index][0] = true;
+    console.log("Index " + index + " of dobArray contains Bob!");
+  }*/
 
   const gridImages = [];
   let key = 0;
@@ -140,16 +200,6 @@ const ImagesThatMove: React.FC<{
 
       key++;
     }
-  }
-
-  //  Going to try to get this collision grid working, get it to find Bob:
-  for (let index = 0; index < props.baseGridSquaresPerImage; index++) {
-    props.littleGrid[index].containsBob = true;
-    console.log("Index " + index + " of littleGrid contains Bob!");
-
-    //                          Bottom-most row, use the variables at some pt.
-    props.movementGrid[index][0] = true;
-    console.log("Index " + index + " of dobArray contains Bob!");
   }
 
   const gridImageList = gridImages.map((gridImage) => (
