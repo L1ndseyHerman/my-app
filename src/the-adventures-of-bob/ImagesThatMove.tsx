@@ -54,8 +54,47 @@ const ImagesThatMove: React.FC<{
 
     document.addEventListener("click", function () {
       let timesRun = 0;
+      const tempArray2: any = [];
       if (jumpInterval === null) {
         jumpInterval = setInterval(() => {
+          for (
+            let index = 0;
+            index < imageMovementGridSquaresMoved[4].length;
+            index++
+          ) {
+            //console.log(index);
+            for (
+              let index2 = 0;
+              index2 < imageMovementGridSquaresMoved[4][index].length;
+              index2++
+            ) {
+              //console.log(index2);
+              if (Array.isArray(tempArray2[index])) {
+                tempArray2[index][index2] = false;
+                if (
+                  index2 >= imageMovementGridSquaresMoved[1] &&
+                  index2 <=
+                    imageMovementGridSquaresMoved[1] +
+                      props.baseGridSquaresPerImage
+                ) {
+                  tempArray2[index][index2] = true;
+                  console.log(index + " " + index2 + " is true!");
+                }
+              } else {
+                tempArray2[index] = [false];
+                if (
+                  index2 >= imageMovementGridSquaresMoved[1] &&
+                  index2 <=
+                    imageMovementGridSquaresMoved[1] +
+                      props.baseGridSquaresPerImage
+                ) {
+                  tempArray2[index][index2] = true;
+                  console.log(index + " " + index2 + " is true!");
+                }
+              }
+            }
+          }
+
           timesRun++;
           if (timesRun >= 12) {
             if (jumpInterval) {
@@ -68,7 +107,7 @@ const ImagesThatMove: React.FC<{
                   imageMovementGridSquaresMoved[1],
                   -10,
                   false,
-                  imageMovementGridSquaresMoved[4],
+                  tempArray2,
                 ]
               );
             }
