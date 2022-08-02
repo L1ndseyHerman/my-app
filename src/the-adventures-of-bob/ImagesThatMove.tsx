@@ -72,9 +72,14 @@ const ImagesThatMove: React.FC<{
               if (Array.isArray(tempArray2[index])) {
                 tempArray2[index][index2] = false;
                 if (
-                  index2 >= imageMovementGridSquaresMoved[1] &&
+                  index2 >=
+                    imageMovementGridSquaresMoved[1] +
+                      imageMovementGridSquaresMoved[2] +
+                      timesRun * 2 &&
                   index2 <=
                     imageMovementGridSquaresMoved[1] +
+                      imageMovementGridSquaresMoved[2] +
+                      timesRun * 2 +
                       props.baseGridSquaresPerImage
                 ) {
                   tempArray2[index][index2] = true;
@@ -83,9 +88,14 @@ const ImagesThatMove: React.FC<{
               } else {
                 tempArray2[index] = [false];
                 if (
-                  index2 >= imageMovementGridSquaresMoved[1] &&
+                  index2 >=
+                    imageMovementGridSquaresMoved[1] +
+                      imageMovementGridSquaresMoved[2] +
+                      timesRun * 2 &&
                   index2 <=
                     imageMovementGridSquaresMoved[1] +
+                      imageMovementGridSquaresMoved[2] +
+                      timesRun * 2 +
                       props.baseGridSquaresPerImage
                 ) {
                   tempArray2[index][index2] = true;
@@ -123,7 +133,7 @@ const ImagesThatMove: React.FC<{
               ]
             );
           }
-        }, 50);
+        }, 2000);
       }
     });
 
